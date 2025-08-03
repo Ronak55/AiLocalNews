@@ -1,50 +1,52 @@
-# Welcome to your Expo app 👋
+# 📰 AI Local News App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+An AI-powered mobile app that allows users to validate and improve local news articles using a mocked GPT editing flow. Built with React Native using Expo.
 
-## Get started
+---
 
-1. Install dependencies
+## 📱 Download & Test
 
-   ```bash
-   npm install
-   ```
+- **Android (APK):** [Download here](https://expo.dev/accounts/irohnyyy/projects/local-news-ai/builds/afb0f678-836c-4a2d-8732-e5dac5c77faf)
+- **iOS (Expo Preview only):** View it using Expo Go [here](https://expo.dev/accounts/irohnyyy/projects/local-news-ai/updates)
 
-2. Start the app
+> iOS builds were tested via Expo Go (no real device builds due to macOS/Apple ID limitations)
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🛠️ Project Setup
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### 1. Clone the repository
 
 ```bash
-npm run reset-project
+git clone https://github.com/Ronak55/AiLocalNews.git
+cd AiLocalNews
 ```
+### 2. Install dependencies
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+```bash
+npm install
+```
+### 3. Start the app
 
-## Learn more
+```bash
+npx expo start
+```
+You can scan the QR code using the Expo Go app on your Android or iOS device.
 
-To learn more about developing your project with Expo, look at the following resources:
+## 🧠 Rules used to accept or reject a submission:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+❌ Spammy language is flagged (e.g., "buy now", "earn money", "click here")
+⚠️ Unsafe content like "violence", "kill", "hate", "bomb" causes rejection
+📉 Too short descriptions (under 50 characters) are rejected
+🧩 Irrelevant topics (not mentioning local events or incidents) are rejected
+✂️ Editing strategy for accepted news:
 
-## Join the community
+If a submission passes all checks:
 
-Join our community of developers creating universal apps.
+The title is prefixed with "Local News:"
+The description is summarized using the first 1–2 sentences
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🧱 Assumptions & Limitations
+
+No GPT or OpenAI API is used — all editing is mock logic written by us
+News Submissions are stored in local storage implemented using react native async storage
